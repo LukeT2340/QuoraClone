@@ -13,7 +13,7 @@ function App() {
           {!user && (
             <>
               <Route path='/login' element={<Login />} />
-              <Route path="*" element={<Navigate to="/home" />} />
+              <Route path="*" element={<Navigate to="/login" />} />
             </>
           )}
         </Routes>
