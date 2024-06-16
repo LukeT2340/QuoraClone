@@ -12,7 +12,8 @@ const userSchema = new Schema({
     googleAccessToken: { type: String, required: true },
     googleRefreshToken: { type: String, required: true },
     role: { type: String, enum: roles, default: "user", required: true },
-    registeredAt: { type: Date, default: Date.now }
+    registeredAt: { type: Date, default: Date.now },
+    password: { type: String }
 });
 
 export default mongoose.model("User", userSchema);

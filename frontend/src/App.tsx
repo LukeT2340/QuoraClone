@@ -1,24 +1,21 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import { useAuthContext } from './hooks/useAuthContext'
 import Login from './pages/Login'
 import './App.css'
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
-function App() {
-  const { user } = useAuthContext()
+function App() {  
   return (
-    <div className="App">
+    <GoogleOAuthProvider clientId="384046387713-0vvvjdvibc4c0a2cr2bstujtn2kotf6o.apps.googleusercontent.com">
       <Router>
         <Routes>
-          {!user && (
-            <>
-              <Route path='/login' element={<Login />} />
-              <Route path="*" element={<Navigate to="/home" />} />
-            </>
-          )}
+  
+          <Route path='/login' element={<Login />} />
+          <Route path="*" element={<Navigate to="/login" />} />
+      
         </Routes>
       </Router>
-    </div>
+    </GoogleOAuthProvider>
   );
 }
 
