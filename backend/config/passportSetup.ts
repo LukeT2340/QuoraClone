@@ -2,7 +2,7 @@
 import { Profile } from 'passport-google-oauth20'
 const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth20').Strategy
-import User, { IUser } from '../models/user.model'; // Assuming IUser is the interface representing your user model
+import User, { IUser } from '../models/user.model'
 
 // Serialize user
 passport.serializeUser((user: Profile, done: (error: any, user?: any, info?: any) => void) => {
